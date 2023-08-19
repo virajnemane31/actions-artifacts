@@ -28,7 +28,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: dist-files
+          name: my-artifact ${{ github.event.commits.id }}
           path: dist
           # path: |
           #   dist
@@ -40,7 +40,7 @@ jobs:
       - name: get build artifacts
         uses: actions/download-artifact@v3
         with:
-          name: dist-files
+          name: my-artifact ${{ github.event.commits.id }}
       - name: Output contents
         run: ls
       - name: Deploy
