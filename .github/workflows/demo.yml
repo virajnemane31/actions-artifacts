@@ -48,5 +48,7 @@ jobs:
           name: my-artifact${{ github.run_number }}-${{ github.run_id }}
       - name: Output contents
         run: ls
+      - name: output filename
+        run: echo "${{ needs.build.outputs.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
